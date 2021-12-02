@@ -1,0 +1,16 @@
+.vscode/
+builds/
+.gitlab-ci.yml
+env
+build/
+__pycache__/
+builds/
+.gitlab-ci.yml
+.vscode/
+*.d
+*.o
+.obj/
+.vscode/
+firmware.bin
+firmware.elf
+firmware.fbi

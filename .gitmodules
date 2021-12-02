@@ -1,0 +1,29 @@
+[submodule "hw/deps/valentyusb"]
+	path = hw/deps/valentyusb
+	url = https://github.com/im-tomu/valentyusb.git
+[submodule "hw/deps/litex"]
+	path = hw/deps/litex
+	url = https://github.com/antmicro/litex.git
+	branch = spiflash-disable-config
+[submodule "hw/deps/litex-boards"]
+	path = hw/deps/litex-boards
+	url = https://github.com/antmicro/litex-boards.git
+	branch = fomu-rom-spi
+[submodule "hw/deps/migen"]
+	path = hw/deps/migen
+	url = https://github.com/m-labs/migen.git
+[submodule "hw/deps/litespi"]
+	path = hw/deps/litespi
+	url = https://github.com/litex-hub/litespi.git
+[submodule "hw/deps/pythondata-cpu-vexriscv"]
+	path = hw/deps/pythondata-cpu-vexriscv
+	url = https://github.com/litex-hub/pythondata-cpu-vexriscv.git
+[submodule "hw/deps/pythondata-software-picolibc"]
+	path = hw/deps/pythondata-software-picolibc
+	url = https://github.com/litex-hub/pythondata-software-picolibc.git
+[submodule "hw/deps/pythondata-software-compiler_rt"]
+	path = hw/deps/pythondata-software-compiler_rt
+	url = https://github.com/litex-hub/pythondata-software-compiler_rt.git
+[submodule "sw/third_party/tinyusb"]
+	path = sw/third_party/tinyusb
+	url = https://github.com/hathach/tinyusb.git
