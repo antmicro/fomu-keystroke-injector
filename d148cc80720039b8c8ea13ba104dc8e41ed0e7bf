@@ -1,0 +1,10 @@
+{
+    "tags": [
+      "fomu",
+      "fpga",
+      "ice40",
+      "usb",
+      "risc-v"
+    ],
+    "categories": ["ASIC & FPGA"],
+}
