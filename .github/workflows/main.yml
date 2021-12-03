@@ -1,0 +1,43 @@
+name: 'main'
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 3
+
+    - name: Setup OSS CAD Suite
+      uses: YosysHQ/setup-oss-cad-suite@v1
+
+    - name: Setup RISC-V GNU toolchain
+      uses: gregdavill/setup-riscv-gnu-toolchain@v1.0
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update -q
+        sudo apt-get install -q -y build-essential wget python3-setuptools python3-pip dfu-util ninja-build
+
+    - name: Install Python dependencies
+      run: |
+        sudo pip install meson
+        for dep in hw/deps/*; do /usr/bin/pip3 install --user -e $dep; done
+
+    - name: Build Fomu keystroke injector
+      run: |
+        cd hw
+        /usr/bin/python3 ./bitstream.py
+
+    - name: Upload bitstream/DFU artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: keystroke-injector-dfu
+        path: hw/build/kosagi_fomu_pvt/kosagi_fomu_pvt.dfu
